@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.MainPage" Title="Main Page" BackgroundImage ="background.jpg">
+<ContentPage.ToolbarItems>
+<ToolbarItem Text="MenuItem"  Icon="menu.png"  Priority="0" Activated="OnMenuButtonClicked"/>
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<ScrollView>
+		<StackLayout>
+	<Frame x:Name="hide" IsVisible="False" WidthRequest="100" Padding="20">
+          <StackLayout WidthRequest="100" Padding="20">
+            <Button x:Name="addlist"
+                        Text="ADD To List"
+                        FontSize="Large"/>
+            <Button x:Name="cancel"
+                        Text="Cancel"
+                        FontSize="Large"/>
+          </StackLayout>
+        </Frame>
+		
+
+<StackLayout VerticalOptions="StartAndExpand" Padding="20" >
+<Label Text= "Search"  FontFamily="Papyrus" TextColor="Black" FontSize="24" />
+
+                    
+                       <StackLayout Orientation="Horizontal" Padding="10">
+          <StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnProgramDegreeTapped"
+                                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+                            <Button Text="Program/Degree"
+                              FontFamily="Papyrus" TextColor="Black"/>
+                            <Image Source ="expand.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+                        </StackLayout>
+
+
+<StackLayout x:Name="ProgramDegreeClicked" IsVisible="false"  VerticalOptions="StartAndExpand" Padding="10">
+
+<StackLayout Orientation="Horizontal" Padding="10" >
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnProgramTapped"
+                                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+<Button Text="Programs"
+                              FontFamily="Papyrus" TextColor="Black"/>
+                            <Image Source ="ic_add.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+
+<Frame x:Name="Programframe" IsVisible="false">
+<ListView>
+</ListView>
+
+</Frame>
+  
+<StackLayout Orientation="Horizontal" Padding="10">
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnDegreeTapped"
+                                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+<Button Text="Degrees"
+                              FontFamily="Papyrus" TextColor="Black"/>
+                            <Image Source ="ic_add.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+</StackLayout>
+
+
+<Frame x:Name="Degreeframe" IsVisible="false">
+<ListView>
+</ListView>
+
+</Frame>
+
+
+
+<StackLayout Orientation="Horizontal" Padding="10">
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnLocationTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Location"  FontFamily="Papyrus" TextColor="Black" />
+<Image Source ="expand.png" 
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+<StackLayout x:Name="OnlocationSelect" IsVisible="false" VerticalOptions="StartAndExpand" Padding="10">
+<StackLayout Orientation="Horizontal" Padding="10" >
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnStateTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Select States"
+                              FontFamily="Papyrus" TextColor="Black"/>
+                            <Image Source ="ic_add.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+<Frame x:Name="SelectStateFrame" IsVisible="false" >
+<ListView>
+</ListView>
+</Frame>
+
+<StackLayout Orientation="Horizontal" Padding="10">
+<StackLayout.GestureRecognizers>
+<TapGestureRecognizer Tapped="OnRegionTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Select Region"
+                              FontFamily="Papyrus" TextColor="Black"/>
+                            <Image Source ="ic_add.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+<Frame x:Name="SelectRegionFrame" IsVisible="false" >
+<ListView>
+</ListView>
+</Frame>
+
+</StackLayout>
+
+<StackLayout Orientation="Horizontal" Padding="10">
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnSizeTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Size"  FontFamily="Papyrus" TextColor="Black"  />
+<Image Source ="expand.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+
+<StackLayout x:Name="OnSizeSelect" IsVisible="false" VerticalOptions="StartAndExpand" Padding="10">
+<StackLayout Orientation="Horizontal" Padding="10" >
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnStudentBodyTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Student Body Size"
+                              FontFamily="Papyrus" TextColor="Black"/>
+                            <Image Source ="ic_add.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+<Frame x:Name="SelectStudentBodyFrame" IsVisible="false" >
+<ListView>
+</ListView>
+</Frame>
+
+
+</StackLayout>
+
+
+<StackLayout Orientation="Horizontal" Padding="10" >
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnNameTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Name"  FontFamily="Papyrus" TextColor="Black"  />
+<Image Source ="expand.png"
+ HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+
+<StackLayout x:Name="OnNameSelect" IsVisible="false" VerticalOptions="StartAndExpand" Padding="10">
+<StackLayout Orientation="Horizontal" Padding="10" >
+
+ 
+<Label Text="Name of the University"
+                              FontFamily="Papyrus" TextColor="Black"/>
+              <Entry x:Name="NameEntry" Placeholder="name of the university"   />
+
+</StackLayout>
+
+</StackLayout>
+
+
+
+<StackLayout Orientation="Horizontal" Padding="10">
+
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnASTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Advanced Search"  FontFamily="Papyrus" TextColor="Black"  />
+<Image Source ="expand.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+
+</StackLayout>
+<StackLayout x:Name="OnAdvancedSearchSelect" IsVisible="false" VerticalOptions="StartAndExpand" Padding="10">
+<StackLayout Orientation="Horizontal" Padding="10" >
+<StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnASBodyTapped"
+                                    NumberOfTapsRequired="1" />
+ </StackLayout.GestureRecognizers>
+<Button Text="Type of school"
+                              FontFamily="Papyrus" TextColor="Black"/>
+                            <Image Source ="ic_add.png"
+                              HorizontalOptions="EndAndExpand"
+                               />
+</StackLayout>
+<Frame x:Name="SelectASBodyFrame" IsVisible="false" >
+<ListView>
+</ListView>
+</Frame>
+
+
+</StackLayout>
+
+
+
+
+
+
+<StackLayout Orientation="Horizontal" Padding="10">
+<Button Text="Find Schools" HorizontalOptions="CenterAndExpand" Clicked="OnFindSchool" FontFamily="Papyrus" TextColor="Black" FontSize ="24" BackgroundColor="White" WidthRequest="200" />
+</StackLayout>
+
+
+
+</StackLayout>
+</StackLayout>
+</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

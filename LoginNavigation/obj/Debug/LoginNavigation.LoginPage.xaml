@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.LoginPage" Title="SchoolFinder" BackgroundImage="background.jpg" >
+	
+	<ContentPage.Content>
+		
+		<StackLayout VerticalOptions="StartAndExpand" Padding="20" Spacing="10">
+			<Label Text ="LOGIN" FontSize ="25" FontFamily="Papyrus" />
+			<Image Source="background.jpg" Aspect="AspectFit" />
+			<Label Text="Username" FontFamily="Papyrus" FontSize="20"/>
+			<Entry x:Name="usernameEntry" Placeholder="username" WidthRequest="3"/>
+			<Label Text="Password" FontFamily="Papyrus" FontSize="20" />
+			<Entry x:Name="passwordEntry" IsPassword="true" Placeholder="password"/>
+				<StackLayout Orientation="Horizontal" Spacing="20" HeightRequest="50">
+			<Button Text="Login" 
+					Clicked="OnLoginButtonClicked" 
+					FontFamily="Papyrus"
+						TextColor="Black"
+					WidthRequest="90"
+					BackgroundColor="White"
+					HorizontalOptions="StartAndExpand"/>
+			<Button Text="Forgot Password" 
+					FontFamily="Papyrus"
+						TextColor="Black"
+					BackgroundColor="White"
+					WidthRequest="140"
+						Clicked="OnForgotButtonClicked"
+					HorizontalOptions="EndAndExpand"/>
+					</StackLayout>
+			<Label x:Name="messageLabel" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

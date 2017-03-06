@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.FirstPage" BackgroundImage ="background.jpg">
+	<ContentPage.Content>
+		<StackLayout>
+		<StackLayout Orientation="Horizontal">
+            <Label x:Name="SchoolFinder"
+                       Text="SchoolFinder"
+							FontFamily="Papyrus"
+						TextColor="Black"
+                       FontSize="Large"
+					HorizontalOptions="CenterAndExpand"/>
+          </StackLayout>
+		<StackLayout Padding="20" Spacing="10">
+			<Image Source="background.jpg" />
+			<StackLayout Orientation="Horizontal" Padding="20">
+            <Label x:Name="Welcome"
+                       Text="Welcome to SchoolFinder App"
+							FontFamily="Papyrus"
+						TextColor="Black"
+                       FontSize="Medium"
+					HorizontalOptions="CenterAndExpand"/>
+          </StackLayout>
+			<StackLayout Padding="20" Spacing="10">
+			<Frame>
+          <StackLayout Orientation="Horizontal" Spacing="10" HeightRequest="20">
+            <Button x:Name="loginButton"
+                       Text="Login"
+							FontFamily="Papyrus"
+					   TextColor="Black"
+                       FontSize="Medium"
+                       IsEnabled="True"
+								Clicked="OnLoginButtonClickedFirstPage"
+					HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="signupButton"
+                        Text="SignUp"
+							FontFamily="Papyrus"
+						TextColor="Black"
+                        FontSize="Medium"
+                        IsEnabled="True"
+								Clicked="OnSignUpButtonClicked"
+					HorizontalOptions="CenterAndExpand"/>
+          </StackLayout>
+        </Frame>
+			<Frame>
+          <StackLayout Orientation="Horizontal" Spacing="10" HeightRequest="20">
+            <Button x:Name="guestUser"
+                       Text="Continue as guest user"
+							FontFamily="Papyrus"
+						TextColor="Black"
+                       FontSize="Medium"
+                       IsEnabled="True"
+								Clicked="OnGuestButtonClicked"
+					HorizontalOptions="CenterAndExpand"/>
+          </StackLayout>
+        </Frame>
+				</StackLayout>
+		</StackLayout>
+			</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

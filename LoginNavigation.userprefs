@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{4277E6DB-E397-42A9-B58D-202927EFD305}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LoginNavigation/App.xaml.cs">
+    <Files>
+      <File FileName="LoginNavigation/MainPage.xaml.cs" Line="157" Column="3" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="LoginNavigation/FirstPage.xaml.cs" Line="25" Column="4" />
+      <File FileName="LoginNavigation/SearchResultPage.xaml.cs" Line="23" Column="3" />
+      <File FileName="LoginNavigation/DetailPage.xaml.cs" Line="18" Column="35" />
+      <File FileName="LoginNavigation/SignUpPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="LoginNavigation/App.xaml" Line="1" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="22" Column="2" />
+      <File FileName="LoginNavigation/App.xaml.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LoginNavigation.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.64700A1E-EAA5-4609-9012-505F2E3FCEC1" />
+</Properties>
