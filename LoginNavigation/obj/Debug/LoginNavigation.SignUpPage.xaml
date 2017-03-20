@@ -2,21 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
  x:Class="LoginNavigation.SignUpPage"
- Title="SchoolFinder" BackgroundImage ="background.jpg">
+ BackgroundImage ="background1.jpg">
 <ContentPage.Content>
-<StackLayout VerticalOptions="StartAndExpand" Padding="20" Spacing="15">
+		<ScrollView>
+<StackLayout VerticalOptions="StartAndExpand" Padding="20" Spacing="10">
 <Label Text="SignUp" FontFamily="Papyrus" FontSize="20"/>
 <Label Text="Username" FontFamily="Papyrus" FontSize="20"/>
-<Entry x:Name="usernameEntry" Placeholder="username"/>
+<Entry x:Name="usernameEntry"/>
 <Label Text="Password" FontFamily="Papyrus" FontSize="20"/>
-<Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true"  />
+<Entry x:Name="passwordEntry" IsPassword="true"  />
 <Label Text="Enter Security Question" FontFamily="Papyrus" FontSize="20" />
-<Entry x:Name="securityQuestion" Placeholder="security question" />
+<Entry x:Name="securityQuestion"/>
 <Label Text ="Enter Answer" FontFamily="Papyrus" FontSize="20"/>
-<Entry x:Name="securityAnswer" Placeholder="security answer" />
+<Entry x:Name="securityAnswer"/>
 <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" TextColor="Black" BackgroundColor="White" WidthRequest="60" FontFamily="Papyrus" FontSize="20" />
 
 <Label x:Name="messageLabel" />
 </StackLayout>
+			</ScrollView>
 </ContentPage.Content>
 </ContentPage>

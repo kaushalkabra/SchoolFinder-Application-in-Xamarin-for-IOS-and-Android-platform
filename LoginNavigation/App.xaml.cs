@@ -4,18 +4,11 @@ namespace LoginNavigation
 {
 	public partial class App : Application
 	{
-		public static bool IsUserLoggedIn { get; set; }
 
 		public App()
 		{
-			if (!IsUserLoggedIn)
-			{
-				MainPage = new NavigationPage(new FirstPage());
-			}
-			else
-			{
-				MainPage = new NavigationPage(new LoginNavigation.MainPage());
-			}
+			MainPage = new NavigationPage(new FirstPage());
+
 		}
 
 		protected override void OnStart()

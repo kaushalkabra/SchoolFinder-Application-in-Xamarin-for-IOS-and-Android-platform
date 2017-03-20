@@ -20,65 +20,121 @@ namespace LoginNavigation {
         private global::Xamarin.Forms.Frame hide;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button addlist;
+        private global::Xamarin.Forms.Button Profile;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button cancel;
+        private global::Xamarin.Forms.Button SearchFriends;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button Logout;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label programlabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label degreelabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.StackLayout ProgramDegreeClicked;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Frame Programframe;
+        private global::Xamarin.Forms.StackLayout Programframe;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView programlist;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Frame Degreeframe;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView degreelist;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.StackLayout OnlocationSelect;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label statelabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Frame SelectStateFrame;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView statelist;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label rlabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Frame SelectRegionFrame;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView regionlist;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.StackLayout OnSizeSelect;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label sizelabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Frame SelectStudentBodyFrame;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView sizelist;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label namelabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.StackLayout OnNameSelect;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Entry NameEntry;
+        private global::Xamarin.Forms.ListView namelist;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.StackLayout OnAdvancedSearchSelect;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Frame SelectASBodyFrame;
+        private global::Xamarin.Forms.Label typelabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout SelectASBodyFrame;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView typeoforganisationlist;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(MainPage));
             hide = this.FindByName <global::Xamarin.Forms.Frame>("hide");
-            addlist = this.FindByName <global::Xamarin.Forms.Button>("addlist");
-            cancel = this.FindByName <global::Xamarin.Forms.Button>("cancel");
+            Profile = this.FindByName <global::Xamarin.Forms.Button>("Profile");
+            SearchFriends = this.FindByName <global::Xamarin.Forms.Button>("SearchFriends");
+            Logout = this.FindByName <global::Xamarin.Forms.Button>("Logout");
+            programlabel = this.FindByName <global::Xamarin.Forms.Label>("programlabel");
+            degreelabel = this.FindByName <global::Xamarin.Forms.Label>("degreelabel");
             ProgramDegreeClicked = this.FindByName <global::Xamarin.Forms.StackLayout>("ProgramDegreeClicked");
-            Programframe = this.FindByName <global::Xamarin.Forms.Frame>("Programframe");
+            Programframe = this.FindByName <global::Xamarin.Forms.StackLayout>("Programframe");
+            programlist = this.FindByName <global::Xamarin.Forms.ListView>("programlist");
             Degreeframe = this.FindByName <global::Xamarin.Forms.Frame>("Degreeframe");
+            degreelist = this.FindByName <global::Xamarin.Forms.ListView>("degreelist");
             OnlocationSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnlocationSelect");
+            statelabel = this.FindByName <global::Xamarin.Forms.Label>("statelabel");
             SelectStateFrame = this.FindByName <global::Xamarin.Forms.Frame>("SelectStateFrame");
+            statelist = this.FindByName <global::Xamarin.Forms.ListView>("statelist");
+            rlabel = this.FindByName <global::Xamarin.Forms.Label>("rlabel");
             SelectRegionFrame = this.FindByName <global::Xamarin.Forms.Frame>("SelectRegionFrame");
+            regionlist = this.FindByName <global::Xamarin.Forms.ListView>("regionlist");
             OnSizeSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnSizeSelect");
+            sizelabel = this.FindByName <global::Xamarin.Forms.Label>("sizelabel");
             SelectStudentBodyFrame = this.FindByName <global::Xamarin.Forms.Frame>("SelectStudentBodyFrame");
+            sizelist = this.FindByName <global::Xamarin.Forms.ListView>("sizelist");
+            namelabel = this.FindByName <global::Xamarin.Forms.Label>("namelabel");
             OnNameSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnNameSelect");
-            NameEntry = this.FindByName <global::Xamarin.Forms.Entry>("NameEntry");
+            namelist = this.FindByName <global::Xamarin.Forms.ListView>("namelist");
             OnAdvancedSearchSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnAdvancedSearchSelect");
-            SelectASBodyFrame = this.FindByName <global::Xamarin.Forms.Frame>("SelectASBodyFrame");
+            typelabel = this.FindByName <global::Xamarin.Forms.Label>("typelabel");
+            SelectASBodyFrame = this.FindByName <global::Xamarin.Forms.StackLayout>("SelectASBodyFrame");
+            typeoforganisationlist = this.FindByName <global::Xamarin.Forms.ListView>("typeoforganisationlist");
         }
     }
 }

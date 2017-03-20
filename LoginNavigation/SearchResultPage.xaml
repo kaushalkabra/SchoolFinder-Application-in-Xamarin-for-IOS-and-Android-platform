@@ -1,93 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.SearchResultPage" BackgroundImage ="background.jpg">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.SearchResultPage" 
+	 BackgroundImage ="background1.jpg">
+<ContentPage.ToolbarItems>
+<ToolbarItem Text="MenuItem"  Icon="menu.png"  Priority="0" Activated="OnMenuButtonClicked"/>
+	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<ScrollView>
+			<StackLayout>
+			<Frame x:Name="hide" IsVisible="False">
+          <StackLayout WidthRequest="100" Padding="20">
+						<StackLayout WidthRequest="100" Padding="20">
+            <Button x:Name="Profile"
+                        Text="Your Profile"
+								Clicked="OnProfileButtonClicked"
+                        FontSize="Large"/>
+							<Button x:Name="SearchFriends"
+                        Text="Find Friends"
+								Clicked="OnFriendsButtonClicked"
+                        FontSize="Large"/>
+            <Button x:Name="Logout"
+                        Text="Logout"
+								Clicked="OnLogoutButtonClicked"
+                        FontSize="Large"/>
+							</StackLayout>
+          </StackLayout>
+        </Frame>
+				<StackLayout>
+		<Frame x:Name="Degreeframe" IsVisible="true">
+										<ScrollView>
+				<ListView x:Name="degrelist" HasUnevenRows="true" ItemTapped="OnListNameClicked">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+												<ViewCell>
+								<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+				              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+				                <Label Text="{Binding Name}">								
+								</Label>
+				              </StackLayout>
+							</StackLayout>
+									<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ScrollView>
+</Frame>
+		</StackLayout>		
 			<StackLayout VerticalOptions="StartAndExpand" Padding="20" Spacing="15">
 			<Label Text="Search Results" FontFamily="Papyrus" FontSize="20"/>
-		 <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-   
-					<StackLayout Grid.Row="0" Grid.Column="0"  BackgroundColor="Green">
-						
-          <StackLayout.GestureRecognizers>
-              <TapGestureRecognizer Tapped="OnFirstClick"
-                                    NumberOfTapsRequired="1" />
-            </StackLayout.GestureRecognizers>
-					<Label Text="Santa Clara University
-					                  Santa Clara, CA
-						Graduates: 220
-						" TextColor="Black"/>
-
-						</StackLayout>
-
-					<StackLayout Grid.Row="0" Grid.Column="1">
-					<Label Text="University of Southern California
-						Los Angeles
-						       Graduates: 300" TextColor="Black"
-						BackgroundColor="Red"/>
-						</StackLayout>
-					
-					<StackLayout Grid.Row="1" Grid.Column="0">
-					<Label Text="University of Southern California
-						Los Angeles
-						       Graduates: 300" TextColor="Black"
-						BackgroundColor="Red"/>
-						</StackLayout>
-					<StackLayout Grid.Row="1" Grid.Column="1"  BackgroundColor="Green">
-					<Label Text="Santa Clara University
-					                  Santa Clara, CA
-						Graduates: 220
-						" TextColor="Black"/>
-						</StackLayout>
-
-					<StackLayout Grid.Row="2" Grid.Column="1">
-					<Label Text="University of Southern California
-						Los Angeles
-						       Graduates: 300" TextColor="Black"
-						BackgroundColor="Red"/>
-						</StackLayout>
-					<StackLayout Grid.Row="2" Grid.Column="0"  BackgroundColor="Green">
-					<Label Text="Santa Clara University
-					                  Santa Clara, CA
-						Graduates: 220
-						" TextColor="Black"/>
-						</StackLayout>
-
-					<StackLayout Grid.Row="3" Grid.Column="0">
-					<Label Text="University of Southern California
-						Los Angeles
-						       Graduates: 300" TextColor="Black"
-						BackgroundColor="Red"/>
-						</StackLayout>
-					<StackLayout Grid.Row="3" Grid.Column="1"  BackgroundColor="Green">
-					<Label Text="Santa Clara University
-					                  Santa Clara, CA
-						Graduates: 220
-						" TextColor="Black"/>
-						</StackLayout>
-
-					<StackLayout Grid.Row="4" Grid.Column="1">
-					<Label Text="University of Southern California
-						Los Angeles
-						       Graduates: 300" TextColor="Black"
-						BackgroundColor="Red"/>
-						</StackLayout>
-					<StackLayout Grid.Row="4" Grid.Column="0"  BackgroundColor="Green">
-					<Label Text="Santa Clara University
-					                  Santa Clara, CA
-						Graduates: 220
-						" TextColor="Black"/>
-						</StackLayout>
-    </Grid>
+	
+				</StackLayout>
 				</StackLayout>
 			</ScrollView>
 	</ContentPage.Content>

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.FirstPage" BackgroundImage ="background.jpg">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.FirstPage" 
+	Title="SchoolFinder" BackgroundImage ="background1.jpg">
 	<ContentPage.Content>
-		<StackLayout>
-		<StackLayout Orientation="Horizontal">
-            <Label x:Name="SchoolFinder"
-                       Text="SchoolFinder"
-							FontFamily="Papyrus"
-						TextColor="Black"
-                       FontSize="Large"
-					HorizontalOptions="CenterAndExpand"/>
-          </StackLayout>
-		<StackLayout Padding="20" Spacing="10">
+		<ScrollView>
+		<StackLayout Padding="20">
+		<StackLayout  Spacing="5">
 			<Image Source="background.jpg" />
 			<StackLayout Orientation="Horizontal" Padding="20">
             <Label x:Name="Welcome"
@@ -22,39 +16,37 @@
           </StackLayout>
 			<StackLayout Padding="20" Spacing="10">
 			<Frame>
-          <StackLayout Orientation="Horizontal" Spacing="10" HeightRequest="20">
+          <StackLayout Orientation="Horizontal">
             <Button x:Name="loginButton"
                        Text="Login"
-							FontFamily="Papyrus"
 					   TextColor="Black"
                        FontSize="Medium"
-                       IsEnabled="True"
+									BackgroundColor="White"
 								Clicked="OnLoginButtonClickedFirstPage"
 					HorizontalOptions="CenterAndExpand"/>
             <Button x:Name="signupButton"
                         Text="SignUp"
-							FontFamily="Papyrus"
 						TextColor="Black"
                         FontSize="Medium"
-                        IsEnabled="True"
+                       BackgroundColor="White"
 								Clicked="OnSignUpButtonClicked"
 					HorizontalOptions="CenterAndExpand"/>
           </StackLayout>
         </Frame>
 			<Frame>
-          <StackLayout Orientation="Horizontal" Spacing="10" HeightRequest="20">
+          <StackLayout Orientation="Horizontal">
             <Button x:Name="guestUser"
                        Text="Continue as guest user"
-							FontFamily="Papyrus"
 						TextColor="Black"
                        FontSize="Medium"
-                       IsEnabled="True"
+                       BackgroundColor="White"
 								Clicked="OnGuestButtonClicked"
 					HorizontalOptions="CenterAndExpand"/>
           </StackLayout>
-        </Frame>
+       </Frame>
 				</StackLayout>
 		</StackLayout>
 			</StackLayout>
+			</ScrollView>
 	</ContentPage.Content>
 </ContentPage>

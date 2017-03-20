@@ -1,13 +1,17 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace LoginNavigation
 {
+	
 	public partial class LoginPage : ContentPage
 	{
+		loginManager manager;
 		public LoginPage()
 		{
 			InitializeComponent();
+			manager = loginManager.DefaultManager;
 		}
 
 		async void OnSignUpButtonClicked(object sender, EventArgs e)
@@ -17,35 +21,34 @@ namespace LoginNavigation
 
 		async void OnLoginButtonClicked(object sender, EventArgs e)
 		{
-			var user = new User
+			var user = new login
 			{
-				Username = usernameEntry.Text,
+				userName = usernameEntry.Text,
 				Password = passwordEntry.Text
 			};
+			await checkItem(user);
+			//messageLabel.Text = "Successful";
+		}
 
-			var isValid = AreCredentialsCorrect(user);
-			if (isValid)
+		async Task checkItem(login item)
+
+		{
+			Boolean result = await manager.CheckTaskAsync(item);
+			if (result == true)
 			{
-				App.IsUserLoggedIn = true;
-				Navigation.InsertPageBefore(new MainPage(), this);
-				await Navigation.PopAsync();
+				messageLabel.Text = "Login Successful!";
+				await Navigation.PushAsync(new MainPage(usernameEntry.Text));
+
 			}
-			else
-			{
-				messageLabel.Text = "Login failed";
-				passwordEntry.Text = string.Empty;
-			}
+			else {
+				messageLabel.Text = "Username and Password did not match.Please try again!!";
+				passwordEntry.Text = "";
+			} 
 		}
 
 		async void OnForgotButtonClicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new ForgotPasswordPage());
-		}
-
-
-		bool AreCredentialsCorrect(User user)
-		{
-			return user.Username == Constants.Username && user.Password == Constants.Password;
 		}
 	}
 }

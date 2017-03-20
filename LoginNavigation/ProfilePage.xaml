@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="LoginNavigation.ProfilePage" BackgroundImage ="background1.jpg">
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="StartAndExpand" Padding="20" Spacing="10">
+<Label Text="Profile" FontFamily="Papyrus" FontSize="20"/>
+<Label Text="Name" FontFamily="Papyrus" FontSize="20"/>
+<Entry x:Name="nameEntry" Placeholder="username"/>
+<Label Text="Gre/Sat Marks" FontFamily="Papyrus" FontSize="20"/>
+<Entry x:Name="GreSatMarks" Placeholder="Gre/Sat Marks"/>
+<Label Text="Program/Degree Interested in" FontFamily="Papyrus" FontSize="20" />
+<Entry x:Name="Program_Degree" Placeholder="security question" />
+<Label Text ="Contact Details" FontFamily="Papyrus" FontSize="20"/>
+<Entry x:Name="ContactDetails" Placeholder="Email id" />
+<Button x:Name="submit" Text="Submit" TextColor="Black" Clicked="OnSubmitButtonClicked" BackgroundColor="White" WidthRequest="60" FontFamily="Papyrus" FontSize="20" />
+<Label x:Name="messageLabel" />
+</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

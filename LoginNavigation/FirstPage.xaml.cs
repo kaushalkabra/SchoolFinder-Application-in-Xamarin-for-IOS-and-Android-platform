@@ -5,6 +5,7 @@ using Xamarin.Forms;
 
 namespace LoginNavigation
 {
+	
 	public partial class FirstPage : ContentPage
 	{
 		public FirstPage()
@@ -23,5 +24,6 @@ namespace LoginNavigation
 		{
 			await Navigation.PushAsync(new MainPage());
 		}
+
 	}
 }

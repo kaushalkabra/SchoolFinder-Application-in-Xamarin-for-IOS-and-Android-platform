@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -6,42 +7,50 @@ namespace LoginNavigation
 {
 	public partial class SignUpPage : ContentPage
 	{
+		loginManager manager;
 		public SignUpPage()
 		{
 			InitializeComponent();
+
+			manager = loginManager.DefaultManager;
+
 		}
 
-		async void OnSignUpButtonClicked(object sender, EventArgs e)
+	public async void OnSignUpButtonClicked(object sender, EventArgs e)
 		{
-			var user = new User()
-			{
-				Username = usernameEntry.Text,
-				Password = passwordEntry.Text,
+			var todo = new login { 
+			userName = usernameEntry.Text,
+			Password = passwordEntry.Text,
+				SecurityQuestion = securityQuestion.Text,
+				Answer = securityAnswer.Text};
+			await AddItem(todo);
 
-			};
-
-			// Sign up logic goes here
-
-			var signUpSucceeded = AreDetailsValid(user);
-			if (signUpSucceeded)
-			{
-				var rootPage = Navigation.NavigationStack.FirstOrDefault();
-				if (rootPage != null)
-				{
-					App.IsUserLoggedIn = true;
-					Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
-					await Navigation.PopToRootAsync();
-				}
-			}
-			else
-			{
-				messageLabel.Text = "Sign up failed";
-			}
 		}
 
-		bool AreDetailsValid(User user)
+		async Task AddItem(login item)
+
 		{
-			return (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.Password) && !string.IsNullOrWhiteSpace(user.Email) && user.Email.Contains("@"));
+			Boolean result = await manager.SaveTaskAsync(item);
+			if (result == true)
+			{
+				messageLabel.Text = "SignUp Successful";
+				await Navigation.PushAsync(new LoginPage());
+				usernameEntry.Text = "";
+				passwordEntry.Text = "";
+				securityQuestion.Text = "";
+				securityAnswer.Text = "";
+			}
+			else { 
+				messageLabel.Text = "Username already exists. Please try different username!";
+				usernameEntry.Text = "";
+			}
+
+
+			//loginManager.ItemsSource = await manager.GetTodoItemsAsync();
 		}
+			
+
+
 	}
+		
 }

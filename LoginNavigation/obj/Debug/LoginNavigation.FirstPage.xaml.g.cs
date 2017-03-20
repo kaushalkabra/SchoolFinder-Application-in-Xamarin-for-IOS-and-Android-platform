@@ -17,9 +17,6 @@ namespace LoginNavigation {
     public partial class FirstPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label SchoolFinder;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label Welcome;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -34,7 +31,6 @@ namespace LoginNavigation {
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(FirstPage));
-            SchoolFinder = this.FindByName <global::Xamarin.Forms.Label>("SchoolFinder");
             Welcome = this.FindByName <global::Xamarin.Forms.Label>("Welcome");
             loginButton = this.FindByName <global::Xamarin.Forms.Button>("loginButton");
             signupButton = this.FindByName <global::Xamarin.Forms.Button>("signupButton");

@@ -17,8 +17,28 @@ namespace LoginNavigation {
     public partial class DetailsPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout universityname;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout OnCostSelect;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout OnAidSelect;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout OnEarningSelect;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout OnGradSelect;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(DetailsPage));
+            universityname = this.FindByName <global::Xamarin.Forms.StackLayout>("universityname");
+            OnCostSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnCostSelect");
+            OnAidSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnAidSelect");
+            OnEarningSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnEarningSelect");
+            OnGradSelect = this.FindByName <global::Xamarin.Forms.StackLayout>("OnGradSelect");
         }
     }
 }

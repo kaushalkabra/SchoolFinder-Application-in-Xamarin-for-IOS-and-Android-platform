@@ -17,8 +17,32 @@ namespace LoginNavigation {
     public partial class SearchResultPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Frame hide;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button Profile;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button SearchFriends;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button Logout;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Frame Degreeframe;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView degrelist;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(SearchResultPage));
+            hide = this.FindByName <global::Xamarin.Forms.Frame>("hide");
+            Profile = this.FindByName <global::Xamarin.Forms.Button>("Profile");
+            SearchFriends = this.FindByName <global::Xamarin.Forms.Button>("SearchFriends");
+            Logout = this.FindByName <global::Xamarin.Forms.Button>("Logout");
+            Degreeframe = this.FindByName <global::Xamarin.Forms.Frame>("Degreeframe");
+            degrelist = this.FindByName <global::Xamarin.Forms.ListView>("degrelist");
         }
     }
 }

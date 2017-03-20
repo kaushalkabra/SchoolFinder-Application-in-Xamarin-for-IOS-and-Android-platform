@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.MainPage" Title="Main Page" BackgroundImage ="background.jpg">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginNavigation.MainPage"
+	BackgroundImage ="background1.jpg">
 <ContentPage.ToolbarItems>
 <ToolbarItem Text="MenuItem"  Icon="menu.png"  Priority="0" Activated="OnMenuButtonClicked"/>
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<ScrollView>
 		<StackLayout>
-	<Frame x:Name="hide" IsVisible="False" WidthRequest="100" Padding="20">
+	<Frame x:Name="hide" IsVisible="False">
           <StackLayout WidthRequest="100" Padding="20">
-            <Button x:Name="addlist"
-                        Text="ADD To List"
+						<StackLayout WidthRequest="100" Padding="20">
+            <Button x:Name="Profile"
+                        Text="Your Profile"
+								Clicked="OnProfileButtonClicked"
                         FontSize="Large"/>
-            <Button x:Name="cancel"
-                        Text="Cancel"
+							<Button x:Name="SearchFriends"
+                        Text="Find Friends"
+								Clicked="OnFriendsButtonClicked"
                         FontSize="Large"/>
+            <Button x:Name="Logout"
+                        Text="Logout"
+								Clicked="OnLogoutButtonClicked"
+                        FontSize="Large"/>
+							</StackLayout>
           </StackLayout>
         </Frame>
 		
@@ -35,74 +44,136 @@
                         </StackLayout>
 
 
+<Label x:Name="programlabel"/>	
+<Label x:Name="degreelabel"/>					
+
 <StackLayout x:Name="ProgramDegreeClicked" IsVisible="false"  VerticalOptions="StartAndExpand" Padding="10">
 
-<StackLayout Orientation="Horizontal" Padding="10" >
-<StackLayout.GestureRecognizers>
-              <TapGestureRecognizer Tapped="OnProgramTapped"
-                                    NumberOfTapsRequired="1" />
-            </StackLayout.GestureRecognizers>
-<Button Text="Programs"
-                              FontFamily="Papyrus" TextColor="Black"/>
-                            <Image Source ="ic_add.png"
-                              HorizontalOptions="EndAndExpand"
-                               />
+		<StackLayout Orientation="Horizontal" Padding="10" >
+		<StackLayout.GestureRecognizers>
+		              <TapGestureRecognizer Tapped="OnProgramTapped"
+		                                    NumberOfTapsRequired="1" />
+		            </StackLayout.GestureRecognizers>
+							<Button Text="Programs"
+		                              FontFamily="Papyrus" TextColor="Black"/>
+		                            <Image Source ="ic_add.png"
+		                              HorizontalOptions="EndAndExpand"
+		                               />
 </StackLayout>
 
-<Frame x:Name="Programframe" IsVisible="false">
-<ListView>
-</ListView>
+<StackLayout x:Name="Programframe" IsVisible="false">
+	<ScrollView>						
+<ListView x:Name="programlist" HasUnevenRows="true">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+				<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                <Label  Text="{Binding Programs}"  >
+				<Label.GestureRecognizers>
+				 <TapGestureRecognizer  Tapped="OnProgram" 
+                                    NumberOfTapsRequired="1" />
+				</Label.GestureRecognizers> 									
+				</Label>				
+              </StackLayout>
+										</StackLayout>
+					<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+					</ViewCell>
+							</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ScrollView>
 
-</Frame>
+					
+</StackLayout>
   
 <StackLayout Orientation="Horizontal" Padding="10">
-<StackLayout.GestureRecognizers>
-              <TapGestureRecognizer Tapped="OnDegreeTapped"
-                                    NumberOfTapsRequired="1" />
-            </StackLayout.GestureRecognizers>
-<Button Text="Degrees"
-                              FontFamily="Papyrus" TextColor="Black"/>
-                            <Image Source ="ic_add.png"
-                              HorizontalOptions="EndAndExpand"
-                               />
-</StackLayout>
-</StackLayout>
+			<StackLayout.GestureRecognizers>
+			              <TapGestureRecognizer Tapped="OnDegreeTapped"
+			                                    NumberOfTapsRequired="1" />
+			            </StackLayout.GestureRecognizers>
+			<Button Text="Degrees"
+			                              FontFamily="Papyrus" TextColor="Black"/>
+			                            <Image Source ="ic_add.png"
+			                              HorizontalOptions="EndAndExpand"
+			                               />
+			</StackLayout>
+			</StackLayout>
 
+				
+				<Frame x:Name="Degreeframe" IsVisible="false">
+										<ScrollView>
+				<ListView x:Name="degreelist" HasUnevenRows="true">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+												<ViewCell>
+								<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+				              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+				                <Label Text="{Binding Degrees}" >
 
-<Frame x:Name="Degreeframe" IsVisible="false">
-<ListView>
-</ListView>
-
+				                <Label.GestureRecognizers>
+								 <TapGestureRecognizer  Tapped="OnDegree" 
+				                                    NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers> 									
+								</Label>
+				              </StackLayout>
+							</StackLayout>
+									<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ScrollView>
 </Frame>
 
 
 
 <StackLayout Orientation="Horizontal" Padding="10">
-<StackLayout.GestureRecognizers>
-              <TapGestureRecognizer Tapped="OnLocationTapped"
-                                    NumberOfTapsRequired="1" />
- </StackLayout.GestureRecognizers>
-<Button Text="Location"  FontFamily="Papyrus" TextColor="Black" />
-<Image Source ="expand.png" 
-                              HorizontalOptions="EndAndExpand"
-                               />
-</StackLayout>
-<StackLayout x:Name="OnlocationSelect" IsVisible="false" VerticalOptions="StartAndExpand" Padding="10">
-<StackLayout Orientation="Horizontal" Padding="10" >
-<StackLayout.GestureRecognizers>
-              <TapGestureRecognizer Tapped="OnStateTapped"
-                                    NumberOfTapsRequired="1" />
- </StackLayout.GestureRecognizers>
-<Button Text="Select States"
-                              FontFamily="Papyrus" TextColor="Black"/>
-                            <Image Source ="ic_add.png"
-                              HorizontalOptions="EndAndExpand"
-                               />
-</StackLayout>
-<Frame x:Name="SelectStateFrame" IsVisible="false" >
-<ListView>
-</ListView>
-</Frame>
+		<StackLayout.GestureRecognizers>
+		              <TapGestureRecognizer Tapped="OnLocationTapped"
+		                                    NumberOfTapsRequired="1" />
+		 </StackLayout.GestureRecognizers>
+		<Button Text="Location"  FontFamily="Papyrus" TextColor="Black" />
+		<Image Source ="expand.png" 
+		                              HorizontalOptions="EndAndExpand"
+		                               />
+		</StackLayout>
+		<StackLayout x:Name="OnlocationSelect" IsVisible="false" VerticalOptions="StartAndExpand" Padding="10">
+		<StackLayout Orientation="Horizontal" Padding="10" >
+		<StackLayout.GestureRecognizers>
+		              <TapGestureRecognizer Tapped="OnStateTapped"
+		                                    NumberOfTapsRequired="1" />
+		 </StackLayout.GestureRecognizers>
+		<Button Text="Select States"
+		                              FontFamily="Papyrus" TextColor="Black"/>
+		                            <Image Source ="ic_add.png"
+		                              HorizontalOptions="EndAndExpand"
+		                               />
+		</StackLayout>
+		<Label x:Name="statelabel" Font="Papyrus"  />
+			<Frame x:Name="SelectStateFrame" IsVisible="false" >
+										<ScrollView>
+			<ListView x:Name="statelist" HasUnevenRows="true">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+											<ViewCell>
+							<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+			              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+			                <Label Text="{Binding State}"  >
+							<Label.GestureRecognizers>
+								 <TapGestureRecognizer  Tapped="OnState" 
+				                                    NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers> 									
+								</Label>
+			              </StackLayout>
+													</StackLayout>
+								<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+								</ViewCell>
+										</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+											</ScrollView>
+			</Frame>
 
 <StackLayout Orientation="Horizontal" Padding="10">
 <StackLayout.GestureRecognizers>
@@ -115,9 +186,30 @@
                               HorizontalOptions="EndAndExpand"
                                />
 </StackLayout>
+<Label x:Name="rlabel" Font="Papyrus"  />
 <Frame x:Name="SelectRegionFrame" IsVisible="false" >
-<ListView>
-</ListView>
+							<ScrollView>
+<ListView x:Name="regionlist" HasUnevenRows="true">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+								<ViewCell>
+				<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                <Label Text="{Binding Region}" >
+						<Label.GestureRecognizers>
+								 <TapGestureRecognizer  Tapped="OnRegion" 
+				                                    NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers> 									
+								</Label>
+										
+              </StackLayout>
+										</StackLayout>
+					<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+					</ViewCell>
+							</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+								</ScrollView>
 </Frame>
 
 </StackLayout>
@@ -145,9 +237,29 @@
                               HorizontalOptions="EndAndExpand"
                                />
 </StackLayout>
+<Label x:Name="sizelabel" Font="Papyrus"  />						
 <Frame x:Name="SelectStudentBodyFrame" IsVisible="false" >
-<ListView>
-</ListView>
+							<ScrollView>
+<ListView x:Name="sizelist" HasUnevenRows="true">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+								<ViewCell>
+				<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                <Label Text="{Binding Size}"  >
+								<Label.GestureRecognizers>
+								 <TapGestureRecognizer  Tapped="OnSize" 
+				                                    NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers> 									
+								</Label>		
+              </StackLayout>
+										</StackLayout>
+					<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+					</ViewCell>
+							</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+								</ScrollView>
 </Frame>
 
 
@@ -164,17 +276,33 @@
  HorizontalOptions="EndAndExpand"
                                />
 </StackLayout>
-
+<Label x:Name="namelabel" Font="Papyrus"  />
 <StackLayout x:Name="OnNameSelect" IsVisible="false" VerticalOptions="StartAndExpand" Padding="10">
 <StackLayout Orientation="Horizontal" Padding="10" >
+<ScrollView>
+<ListView x:Name="namelist" HasUnevenRows="true">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+								<ViewCell>
+				<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                <Label Text="{Binding Name}"  >
+								<Label.GestureRecognizers>
+								 <TapGestureRecognizer  Tapped="OnName" 
+				                                    NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers> 									
+								</Label>			
+              </StackLayout>
+										</StackLayout>
+					<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+					</ViewCell>
+							</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
 
- 
-<Label Text="Name of the University"
-                              FontFamily="Papyrus" TextColor="Black"/>
-              <Entry x:Name="NameEntry" Placeholder="name of the university"   />
+	</ScrollView>
 
 </StackLayout>
-
 </StackLayout>
 
 
@@ -203,19 +331,33 @@
                               HorizontalOptions="EndAndExpand"
                                />
 </StackLayout>
-<Frame x:Name="SelectASBodyFrame" IsVisible="false" >
-<ListView>
-</ListView>
-</Frame>
-
-
+<Label x:Name="typelabel" Font="Papyrus"  />
+<StackLayout x:Name="SelectASBodyFrame" IsVisible="false" >
+							<ScrollView>
+<ListView x:Name="typeoforganisationlist" HasUnevenRows="true">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+								<ViewCell>
+				<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                <Label Text="{Binding Type_of_oraganisation}"  >
+								<Label.GestureRecognizers>
+								 <TapGestureRecognizer  Tapped="OnType" 
+				                                    NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers> 									
+								</Label>			
+              </StackLayout>
+										</StackLayout>
+					<!--<StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">-->
+					</ViewCell>
+							</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+								</ScrollView>
 </StackLayout>
 
 
-
-
-
-
+</StackLayout>
 <StackLayout Orientation="Horizontal" Padding="10">
 <Button Text="Find Schools" HorizontalOptions="CenterAndExpand" Clicked="OnFindSchool" FontFamily="Papyrus" TextColor="Black" FontSize ="24" BackgroundColor="White" WidthRequest="200" />
 </StackLayout>

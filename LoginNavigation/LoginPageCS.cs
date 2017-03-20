@@ -63,7 +63,7 @@ namespace LoginNavigation
 			var isValid = AreCredentialsCorrect(user);
 			if (isValid)
 			{
-				App.IsUserLoggedIn = true;
+				//App.IsUserLoggedIn = true;
 				Navigation.InsertPageBefore(new MainPage(), this);
 				await Navigation.PopAsync();
 			}
